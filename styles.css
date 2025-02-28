@@ -1,0 +1,109 @@
+body {
+    background-color: #e8decc;
+}
+        @font-face {
+            font-family: 'goudy old style';
+            src: url('fonts/goudy-old-style-bold.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Wrapper to center the grid and heading */
+        .wrapper {
+            display: flex;
+            flex-direction: column;               /* Stack grid and heading vertically */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;                    /* Full viewport height to vertically center */
+            padding: 20px;                        /* Breathing room */
+        }
+
+        .grid-box {
+            padding: 10px;                        /* Maintain spacing */
+            /* No border or background, remains invisible */
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(21, 1fr); /* 21 columns of equal width */
+            grid-template-rows: repeat(30, 10px);   /* Row height at 10px */
+            gap: 2px;                              /* Spacing between cells */
+            max-width: 450px;                      /* Width at 450px */
+        }
+
+        .grid-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;                         /* Ensures items fill their space */
+            font-size: 20px;                      /* Matches 2-row height (20px) */
+            line-height: 1;                       /* Removes extra vertical spacing */
+            margin: 0;                            /* Removes any default margins */
+            padding: 0;                           /* Removes any padding */
+            /* No background or border, remains invisible */
+        }
+
+        .grid-item a {
+            text-decoration: none;                /* Removes underline from links */
+            color: #000;                          /* Sets link color to black */
+            display: flex;                        /* Ensures link fills the cell */
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            line-height: 1;                       /* Ensures text height matches cell */
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: normal; /* Sets font to Courier */
+        }
+
+        .grid-item a:hover {
+            color: #007bff;                       /* Blue on hover for feedback */
+        }
+
+        /* Heading styling with custom font */
+        h1 {
+            font-family: 'goudy old style', serif; /* Apply custom font, fallback to serif */
+            font-size: 36px;                      /* Larger text for the heading */
+            margin-top: 20px;                     /* Space between grid and heading */
+            text-align: center;                   /* Center the text */
+            color: #333;                          /* Dark gray color */
+        }
+
+        /* Single-digit numbers (1 column, 2 rows) */
+        .item-0 { grid-row: 5 / span 2; grid-column: 2; }
+        .item-1 { grid-row: 1 / span 2; grid-column: 4; }
+        .item-2 { grid-row: 14 / span 2; grid-column: 6; }
+        .item-3 { grid-row: 7 / span 2; grid-column: 8; }
+        .item-4 { grid-row: 12 / span 2; grid-column: 10; }
+        .item-5 { grid-row: 16 / span 2; grid-column: 12; }
+        .item-6 { grid-row: 11 / span 2; grid-column: 14; }
+        .item-7 { grid-row: 19 / span 2; grid-column: 16; }
+        .item-8 { grid-row: 8 / span 2; grid-column: 19; }
+        .item-9 { grid-row: 3 / span 2; grid-column: 21; }
+
+        /* Double-digit numbers (2 columns, 2 rows) */
+        .item-10 { grid-row: 21 / span 2; grid-column: 1 / span 2; }
+        .item-11 { grid-row: 26 / span 2; grid-column: 4 / span 2; }
+        .item-12 { grid-row: 23 / span 2; grid-column: 7 / span 2; }
+        .item-13 { grid-row: 26 / span 2; grid-column: 10 / span 2; }
+        .item-14 { grid-row: 24 / span 2; grid-column: 13 / span 2; }
+        .item-15 { grid-row: 26 / span 2; grid-column: 16 / span 2; }
+        .item-16 { grid-row: 23 / span 2; grid-column: 19 / span 2; }
+        
+        /* Numbers 17-23 in bottom row (rows 29-30), 2 columns wide, 1 column apart */
+        .item-17 { grid-row: 29 / span 2; grid-column: 1 / span 2; }
+        .item-18 { grid-row: 29 / span 2; grid-column: 4 / span 2; }
+        .item-19 { grid-row: 29 / span 2; grid-column: 7 / span 2; }
+        .item-20 { grid-row: 29 / span 2; grid-column: 10 / span 2; }
+        .item-21 { grid-row: 29 / span 2; grid-column: 13 / span 2; }
+        .item-22 { grid-row: 29 / span 2; grid-column: 16 / span 2; }
+        .item-23 { grid-row: 29 / span 2; grid-column: 19 / span 2; }
+        .infinity {
+            position: fixed; /* or 'absolute' if you want it relative to content */
+            bottom: 20px;
+            right: 20px;
+            font-size:40px; /* Adjust size as needed */
+            color: #000; /* Adjust color as needed */
+            z-index: 1000; /* Ensures it stays on top of other content */
+            font-family: 'Courier New', Courier, monospace;
+        }
